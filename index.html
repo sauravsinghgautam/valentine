@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine ❤️</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Comic Sans MS', cursive;
+    }
+
+    body {
+      height: 100vh;
+      background: 
+        repeating-linear-gradient(
+          45deg,
+          #ffdee9,
+          #ffdee9 20px,
+          #fff1f6 20px,
+          #fff1f6 40px
+        );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* floating hearts */
+    body::before {
+      content: "❤️ 💖 💕 💗 💘 💓";
+      position: absolute;
+      font-size: 40px;
+      animation: float 6s linear infinite;
+      opacity: 0.4;
+    }
+
+    @keyframes float {
+      0% { top: 100%; left: 10%; }
+      100% { top: -10%; left: 90%; }
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      position: relative;
+    }
+
+    h1 {
+      color: #ff3366;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    .teddy {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      margin-top: 30px;
+      position: relative;
+      height: 80px;
+    }
+
+    button {
+      padding: 12px 30px;
+      font-size: 18px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      transition: 0.2s ease;
+    }
+
+    #yesBtn {
+      background: red;
+      color: white;
+      left: 30%;
+    }
+
+    #yesBtn:hover {
+      background: darkred;
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      background: #444;
+      color: white;
+      left: 55%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="teddy">🧸</div>
+    <h1>Will You Be My Valentine? 💝</h1>
+
+    <div class="buttons">
+      <button id="yesBtn" onclick="yesClicked()">Yes ❤️</button>
+      <button id="noBtn">No 💔</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 100);
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+    });
+
+    function yesClicked() {
+      alert("Yayyyy!!! 💖🥰 Happy Valentine’s Day!");
+    }
+  </script>
+
+</body>
+</html>
